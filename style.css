@@ -140,7 +140,7 @@
     position: fixed;
     width: 100vw;
     z-index: 999;
-}
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
 .header__title{
     display: flex;
     align-items: center;
@@ -242,6 +242,67 @@
         font-weight: 700;
         color: var(--clr-light);
     }
+  }
+
+
+  /* RESPONSIVE FOR SAMSUM A20 */
+  @media screen and (max-width: 406px){
+    .header{
+        width: 50rem
+    }
+    .toggle__menu {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .header__nav {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background-color: var(--clr-dark);
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        right: -100%;
+        z-index: 9999;
+        transform: translateY(-18rem);
+        margin-top: 28rem;
+        transition: 0.5s ease;
+      }
+    
+      .header__nav.open {
+        right: 0;
+        transition: 0.5s ease-in-out;
+      }
+      .header img {
+        width: 12rem;
+      }
+    
+      .toggle__menu span {
+        transition: 0.5s ease;
+      }
+      .toggle__menu.open span:nth-child(1) {
+        transform: translate(0, 10px) rotate(225deg);
+        transition: 0.5s ease;
+      }
+      .toggle__menu.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .toggle__menu.open span:nth-child(3) {
+        transform: translate(0, -7.5px) rotate(-225deg);
+        transition: 0.5s ease;
+      }
+  
+      .header__title img{
+          width: 8rem;
+      }
+      .header__title h2{
+          font-size: 2rem;
+          font-weight: 700;
+          color: var(--clr-light);
+      }
   }
 /* homebanner */
 .homeBanner__wrapper{
@@ -373,7 +434,7 @@
         position: relative;
     }
     .yellow{
-        width:397px;
+        width:403px;
         position: absolute;
         opacity: 50%;
     }
@@ -523,8 +584,365 @@ footer{
         gap: 0.5rem;
         padding: 1rem 0;
         text-align: center;
+        justify-content: space-around;
     }
 }
+
+/* ABOUT BANNER */
+
+.aboutBanner{
+    padding: 17rem 0 7rem 0;
+}
+.aboutBanner__wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.aboutBanner__container   {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.aboutBanner__container img {
+    width: 60rem;
+}
+
+.aboutBanner__content h1 {
+    font-size: 10rem;
+    line-height: 9rem;
+    font-weight: 700;
+    color: var(--clr-primary);
+}
+.aboutBanner__container p{
+    font-weight: 500;
+    text-align: justify;
+}
+.aboutBanner__content{
+    width: 60rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4rem;
+}
+.aboutBanner__content ul{
+    display: flex;
+    gap: 2rem;
+}
+.aboutBanner__content ul li a{
+    color: var(--clr-primary);
+    font-size: 2.5rem;
+}
+.aboutBanner a {
+    text-align: center;
+    color: var(--clr-primary);
+    font-size: 4rem;
+}
+/* RESPONSIVE ABOUT BANNER */
+@media screen and (max-width: 520px){
+    .aboutBanner__container{
+        flex-direction: column-reverse;
+    }
+    .aboutBanner__content{
+        width: 40rem;
+    }
+    .aboutBanner__content h1 {
+        font-size: 7rem;
+        line-height: 6rem;
+        font-weight: 700;
+        color: var(--clr-primary);
+    }
+    .aboutBanner img {
+        padding: 3rem 0;
+    }
+}
+
+/* ABOUR PROJECTS */
+.projects{
+    background-color: var(--clr-dark);
+    padding: 7rem 0;
+}
+.projects__cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 3rem;
+}
+.projects__title{
+    padding-bottom: 7rem;
+}
+.projects__title h2{
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--clr-primary);
+}
+.projects__title p{
+    color: var(--clr-light);
+}
+.projects__card{
+    width: 40rem;
+    background-color: var(--clr-light);
+    border-radius: 2rem;
+    height: 45rem;
+}
+.projects__card img {
+    width: 40rem;
+}
+.projects__card h3{
+    color: var(--clr-primary);
+}
+.projectCard__text{
+    padding: 2rem;
+}
+.projectCard__text h3{
+    padding: 1.5rem 0;
+}
+
+/* CONTACT */
+.contact{
+    padding: 15rem 0 0 0;
+    background-color: var(--clr-dark);
+    margin-bottom: 1px;
+}
+
+.contact__wrapper{
+    height: 70rem;
+}
+
+.contact__container{
+    display: flex;
+}
+
+.contact__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    width:65rem;
+}
+.contact__info h1{
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--clr-primary);
+}
+.contact__info ul li{
+    padding: 2rem 0;
+    display: flex;
+}
+.contact__info ul li i{
+    color: var(--clr-primary);
+    margin-right: 2rem;
+    font-size: 3rem;
+}
+.contactSocials{
+    display: flex;
+}
+.contactSocials li i{
+    color: var(--clr-light);
+}
+.contact__info{
+    color: var(--clr-light);
+}
+.contact__form{
+    width: 70rem;
+    display: flex;
+    align-items: center;
+    padding-top: 13rem;
+}
+.contact__form form{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    width: 80%;
+}
+.contact__form a{
+    width: 18rem;
+    text-align: end;
+}
+
+.contact__form form input{
+    padding: 2rem;
+}
+.contact__form form input::placeholder{
+    font-family: "Poppins", sans-serif;
+}
+
+.contact__form form textarea{
+    padding: 2rem 5rem 5rem 2rem;
+    font-family: "Poppins", sans-serif;
+}
+.contact__bottom ul li i{
+    color: var(--clr-light);
+    margin-right: 2rem;
+    font-size: 3rem;
+    
+}
+
+
+.contact__bottom{
+    display: flex;
+    gap: 78rem;
+    margin-top: 3rem;
+}
+
+@media screen and (max-width: 520px){
+    .contact__wrapper{
+        height: 91rem;
+    }
+    .contact__container{
+        flex-direction: column;
+    }
+    .contact__form{
+        width: 50rem;
+        padding-top: 5rem;
+    }
+    .contact__bottom{
+        flex-direction: column-reverse;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .contactSocials{
+        justify-content: center;
+    }
+    .contact__bottom a{
+        width: 18rem;
+        margin-bottom: 1rem;
+    }
+    .contact__info{
+        width: 43rem;
+        text-align: justify;
+    }
+    .contactSocials{
+        display: none;
+    }
+}
+
+
+
+/* UPDATE */
+.update{
+    padding: 11rem 0 5rem 0;
+
+}
+.update__wrapper{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+
+}
+.update__wrapper h3{
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--clr-primary);
+}
+.update__title{
+    margin: 7rem 0;
+}
+.update__title h1{
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--clr-primary);
+}
+.update__title p{
+    font-size: 2rem;
+    font-weight: 400;
+}
+.update__left{
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+}
+.update__content img{
+    width: 100%
+}
+.update__content ul{
+    display: flex;
+    gap: 3rem;
+    margin: 1.5rem 0;
+}.update__content i{
+    margin-right: 2rem;
+}
+.update__content h3{
+    margin-bottom: 2rem;
+}
+.update__content p{
+    text-align: justify;
+    margin-bottom: 4rem;
+}
+.update__content a{
+    color: var(--clr-primary);
+    font-size: 2rem;
+}
+
+.update__right{
+    display: grid;
+    grid-template-rows: 1fr 1.5fr 1fr;
+    justify-content: center;
+}
+
+.update__categories table{
+    margin: 3rem 0;
+}
+
+.update__categories table td{
+    padding: 1rem 0;
+}
+.update__categories table td:nth-child(1){
+    padding-right: 25rem;
+}
+.update__recent h3{
+    padding-bottom: 3rem;
+}
+.update__recent{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.update__recent .recents {
+    display: flex;
+    gap: 2rem;
+}
+.update__recent .recents h4{
+    font-weight: 700;
+}
+.recents .recent--deets{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.update__tag h3{
+    padding-bottom: 2rem;
+}
+.update__tag table{
+    border-collapse: separate;
+    border-spacing: 2rem;
+}
+
+.update__tag td{
+    border: 2px solid var(--clr-dark);
+    padding: 2rem;
+    border-radius: 3rem;
+    
+}
+.update__tag td a{
+    color: var(--clr-dark);
+    font-weight: 600;
+}
+
+.update__tag td:hover a{
+    color: var(--clr-light);
+}
+.update__tag td:hover {
+    background-color: var(--clr-dark);
+}
+
+/* RESPONSIVE UPDATE */
+@media screen and (max-width: 520px){
+    .update__wrapper{
+        grid-template-columns: unset;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
 /* ASSETS */
 .btn{
     background-color: transparent;
